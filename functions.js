@@ -44,20 +44,20 @@ function desencriptar() {
 }
 
 function cambiarVisibilidad(texto) {
-const col2 = document.getElementsByClassName("col-2");
-const col3 = document.getElementsByClassName("col-3");
+    const divConTexto = document.getElementById("div-con-texto");
+    const divSinTexto = document.getElementById("div-sin-texto");
 
     if (texto.length < 1) {
-        col2[0].style.display = "none";
-        col3[0].style.display = "table-cell";
+        divConTexto.style.display = "none";
+        divSinTexto.style.display = "block";
     } else {
-        col3[0].style.display = "none";
-        col2[0].style.display = "table-cell";
+        divConTexto.style.display = "block";
+        divSinTexto.style.display = "none";
     }
 }
 
 function copiar() {
     const textSalida = document.getElementById("txtResultado");
     navigator.clipboard.writeText(textSalida.value);
-    alert("Texto copiado");
+    textSalida.value = "";
 }
