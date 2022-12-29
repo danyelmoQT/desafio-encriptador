@@ -1,3 +1,7 @@
+body{
+    background-color: #E5E5E5;
+}
+
 header img {
     margin: 1em;
 }
@@ -23,19 +27,32 @@ ul {
 }
 
 .col-2 {
-    display: table-cell;
+    display: none;
     text-align: center;
     margin: auto;
     padding: 1em;
-    border-width: 2px;
+    background-color: white;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #0A3871;
+}
+
+.col-3 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    padding: 1em;
+    background-color: white;
     border-radius: 1em;
     border-style: solid;
     border-color: #0A3871;
 }
 
 .frame-principal p {
+    color:#0A3871;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: x-large;
     margin: 2em 0;
 }
 
@@ -43,6 +60,7 @@ textarea {
     color: #0A3871;
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
+    background-color: transparent;
     border: none;
     width: 100%;
     outline: none;
@@ -102,6 +120,11 @@ footer {
     }
 
     .col-2 {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+    .col-3 {
         display: block;
         width: 100%;
         border: none;

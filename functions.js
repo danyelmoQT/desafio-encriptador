@@ -10,24 +10,24 @@ function encriptar() {
             code = "enter";
         }
         else if (letra == "i") {
-            code = "imes"
+            code = "imes";
         }
         else if (letra == "a") {
-            code = "ai"
+            code = "ai";
         }
         else if (letra == "o") {
-            code = "ober"
+            code = "ober";
         }
         else if (letra == "u") {
-            code = "ufat"
+            code = "ufat";
         }
         else {
             code = letra;
         }
         textoSalida = textoSalida + code;
     }
-
     document.getElementById("txtResultado").value = textoSalida;
+    cambiarVisibilidad(textoSalida);
 }
 
 function desencriptar() {
@@ -40,18 +40,24 @@ function desencriptar() {
     textoSalida = textoSalida.replaceAll("ober", "o");
     textoSalida = textoSalida.replaceAll("ufat", "u");
     document.getElementById("txtResultado").value = textoSalida;
+    cambiarVisibilidad(textoSalida);
+}
+
+function cambiarVisibilidad(texto) {
+const col2 = document.getElementsByClassName("col-2");
+const col3 = document.getElementsByClassName("col-3");
+
+    if (texto.length < 1) {
+        col2[0].style.display = "none";
+        col3[0].style.display = "table-cell";
+    } else {
+        col3[0].style.display = "none";
+        col2[0].style.display = "table-cell";
+    }
 }
 
 function copiar() {
     const textSalida = document.getElementById("txtResultado");
-
-    //medio fancy esto:
-    textSalida.select();
-    textSalida.setSelectionRange(0, 99999); // For mobile devices
-
-    //Esta es la línea importante
     navigator.clipboard.writeText(textSalida.value);
-
-    // Aviso
     alert("Texto copiado");
 }
