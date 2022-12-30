@@ -43,6 +43,13 @@ function desencriptar() {
     cambiarVisibilidad(textoSalida);
 }
 
+function copiar() {
+    const textSalida = document.getElementById("txtResultado");
+    navigator.clipboard.writeText(textSalida.value);
+    textSalida.value = "";
+    cambiarVisibilidad("");
+}
+
 function cambiarVisibilidad(texto) {
     const divConTexto = document.getElementById("div-con-texto");
     const divSinTexto = document.getElementById("div-sin-texto");
@@ -54,10 +61,4 @@ function cambiarVisibilidad(texto) {
         divConTexto.style.display = "block";
         divSinTexto.style.display = "none";
     }
-}
-
-function copiar() {
-    const textSalida = document.getElementById("txtResultado");
-    navigator.clipboard.writeText(textSalida.value);
-    textSalida.value = "";
 }
